@@ -1,5 +1,5 @@
 var exec = require("cordova/exec");
-module.exports = {
+var bg = {
     configure: function(success, failure, config) {
         var params              = JSON.stringify(config.params || {}),
             headers		        = JSON.stringify(config.headers || {}),
@@ -39,14 +39,14 @@ module.exports = {
             failure || function() {},
             'BackgroundGeoLocation',
             'finish',
-            []);  
+            []);
     },
     changePace: function(isMoving, success, failure) {
         exec(success || function() {},
             failure || function() {},
             'BackgroundGeoLocation',
             'onPaceChange',
-            [isMoving]);   
+            [isMoving]);
     },
     /**
     * @param {Integer} stationaryRadius
@@ -72,3 +72,15 @@ module.exports = {
             []);
        }
 };
+
+// Plug in to Cordova
+cordova.addConstructor(function() {
+
+  if (!window.Cordova) {
+    window.Cordova = cordova;
+  };
+
+
+  if (!window.plugins) window.plugins = {};
+  window.plugins.backgroundGeoLocation = bg;
+});
