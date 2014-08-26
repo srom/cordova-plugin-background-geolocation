@@ -1,9 +1,8 @@
-var exec = cordova.exec;
 var backgroundGeoLocation = function() {};
 
 backgroundGeoLocation.prototype.configure = function(success, failure, config) {
   var params            = JSON.stringify(config.params || {}),
-      headers		        = JSON.stringify(config.headers || {}),
+      headers           = JSON.stringify(config.headers || {}),
       url               = config.url        || 'BackgroundGeoLocation_url',
       stationaryRadius  = (config.stationaryRadius >= 0) ? config.stationaryRadius : 50,  // meters
       distanceFilter    = (config.distanceFilter >= 0) ? config.distanceFilter : 500,     // meters
@@ -14,7 +13,7 @@ backgroundGeoLocation.prototype.configure = function(success, failure, config) {
       notificationText  = config.notificationText || "ENABLED",
       activityType      = config.activityType || "OTHER";
 
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -24,7 +23,7 @@ backgroundGeoLocation.prototype.configure = function(success, failure, config) {
 };
 
 backgroundGeoLocation.prototype.start = function(success, failure, config) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -34,7 +33,7 @@ backgroundGeoLocation.prototype.start = function(success, failure, config) {
 };
 
 backgroundGeoLocation.prototype.stop = function(success, failure, config) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -44,7 +43,7 @@ backgroundGeoLocation.prototype.stop = function(success, failure, config) {
 };
 
 backgroundGeoLocation.prototype.finish = function(success, failure) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -54,7 +53,7 @@ backgroundGeoLocation.prototype.finish = function(success, failure) {
 };
 
 backgroundGeoLocation.prototype.changePace = function(isMoving, success, failure) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -70,7 +69,7 @@ backgroundGeoLocation.prototype.changePace = function(isMoving, success, failure
 * @param {Integer} timeout
 */
 backgroundGeoLocation.prototype.setConfig = function(success, failure, config) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
@@ -83,7 +82,7 @@ backgroundGeoLocation.prototype.setConfig = function(success, failure, config) {
 * Returns current stationaryLocation if available.  null if not
 */
 backgroundGeoLocation.prototype.getStationaryLocation = function(success, failure) {
-  exec(
+  cordova.exec(
     success || function() {},
     failure || function() {},
     'BackgroundGeoLocation',
