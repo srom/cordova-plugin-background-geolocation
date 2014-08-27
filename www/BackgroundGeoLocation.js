@@ -12,7 +12,7 @@ window.backgroundGeoLocation = {
         notificationText  = config.notificationText || "ENABLED",
         activityType      = config.activityType || "OTHER";
 
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -22,7 +22,7 @@ window.backgroundGeoLocation = {
   },
 
   start: function(success, failure, config) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -32,7 +32,7 @@ window.backgroundGeoLocation = {
   },
 
   stop: function(success, failure, config) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -42,7 +42,7 @@ window.backgroundGeoLocation = {
   },
 
   finish: function(success, failure) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -52,7 +52,7 @@ window.backgroundGeoLocation = {
   },
 
   changePace: function(isMoving, success, failure) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -68,7 +68,7 @@ window.backgroundGeoLocation = {
 * @param {Integer} timeout
 */
   setConfig: function(success, failure, config) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -81,7 +81,7 @@ window.backgroundGeoLocation = {
 * Returns current stationaryLocation if available.  null if not
 */
   getStationaryLocation: function(success, failure) {
-    cordova.exec(
+    window.cordova.exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
