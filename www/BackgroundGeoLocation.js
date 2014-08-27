@@ -1,4 +1,6 @@
-window.backgroundGeoLocation = {
+var exec = require('cordova/exec');
+
+module.exports = {
   configure: function(success, failure, config) {
     var params            = JSON.stringify(config.params || {}),
         headers           = JSON.stringify(config.headers || {}),
@@ -12,7 +14,7 @@ window.backgroundGeoLocation = {
         notificationText  = config.notificationText || "ENABLED",
         activityType      = config.activityType || "OTHER";
 
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -22,7 +24,7 @@ window.backgroundGeoLocation = {
   },
 
   start: function(success, failure, config) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -32,7 +34,7 @@ window.backgroundGeoLocation = {
   },
 
   stop: function(success, failure, config) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -42,7 +44,7 @@ window.backgroundGeoLocation = {
   },
 
   finish: function(success, failure) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -52,7 +54,7 @@ window.backgroundGeoLocation = {
   },
 
   changePace: function(isMoving, success, failure) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -68,7 +70,7 @@ window.backgroundGeoLocation = {
 * @param {Integer} timeout
 */
   setConfig: function(success, failure, config) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
@@ -81,7 +83,7 @@ window.backgroundGeoLocation = {
 * Returns current stationaryLocation if available.  null if not
 */
   getStationaryLocation: function(success, failure) {
-    window.cordova.exec(
+    exec(
       success || function() {},
       failure || function() {},
       'BackgroundGeoLocation',
