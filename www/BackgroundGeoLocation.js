@@ -92,9 +92,13 @@ backgroundGeoLocation.prototype.getStationaryLocation = function(success, failur
 };
 
 // Plug in to Cordova
-cordova.addConstructor(function() {
-  if (!window.plugins) {
-    window.plugins = {};
-  }
-  window.plugins.backgroundGeoLocation = new backgroundGeoLocation();
-});
+// cordova.addConstructor(function() {
+//   if (!window.plugins) {
+//     window.plugins = {};
+//   }
+//   window.plugins.backgroundGeoLocation = new backgroundGeoLocation();
+// });
+// if (!window.plugins) {
+//   window.plugins = {};
+// }
+window.backgroundGeoLocation = new backgroundGeoLocation();

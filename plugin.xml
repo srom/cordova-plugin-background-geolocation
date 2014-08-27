@@ -9,14 +9,14 @@
     <license>MIT</license>
     <keywords>phonegap,background geolocation</keywords>
 
-    <engines>
+    <!-- <engines>
         <engine name="cordova" version=">=3.0.0" />
-    </engines>
+    </engines> -->
 
     <dependency id="org.apache.cordova.geolocation" />
 
     <js-module src="www/BackgroundGeoLocation.js" name="BackgroundGeoLocation">
-        <clobbers target="navigator.backgroundGeoLocation" />
+        <clobbers target="window.backgroundGeoLocation" />
     </js-module>
 
     <!-- android -->
